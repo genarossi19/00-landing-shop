@@ -1,0 +1,30 @@
+---
+interface Props {
+	href: string;
+  newClass: string;
+}
+
+const { href, newClass } = Astro.props;
+
+// const path = Astro.url.pathname
+// const pathSlipt = path.split('/').slice(1).toString()
+
+
+// const ClassFunction = (type = null) => {
+
+//     if (pathSlipt === type) {
+//         return 'text-primary-green'
+//     } else {
+//         return 'text-secondary-black'
+//     }
+// }
+
+// 'text-secondary-black  hover:text-primary-green transition-all ease-in-out cursor-pointer px-4 py-2'
+  
+---
+
+<li class= {newClass}>
+    <a href={href}>
+     <slot/>
+    </a>
+  </li>

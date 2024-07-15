@@ -5,12 +5,12 @@ interface Props {
 
 const { title } = Astro.props;
 
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar.astro';
 
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -21,13 +21,14 @@ import Navbar from '@/components/Navbar';
 	</head>
 	<body>
 		<div id="app">
-			<nav class='flex justify-between p-4 items-center '>
-				<Navbar />
-			</nav>
-			<main>
+			<header class="header-blur fixed top-0 w-full">
+				<Navbar/>
+			</header>
+				
+			<main >
 				<slot />
 			</main>
-			<footer></footer>
+			<footer class=" bg-secondary-black text-white "></footer>
 		</div>
 		
 		
@@ -38,7 +39,7 @@ import Navbar from '@/components/Navbar';
 	
 	html {
 		font-family:"Poppins", sans-serif;
-		background: #eff3f6;
+		background-image: linear-gradient(45deg, rgba(187, 187, 187,0.04) 0%, rgba(187, 187, 187,0.04) 50%,rgba(86, 86, 86,0.04) 50%, rgba(86, 86, 86,0.04) 100%),linear-gradient(135deg, rgba(166, 166, 166,0.04) 0%, rgba(166, 166, 166,0.04) 50%,rgba(92, 92, 92,0.04) 50%, rgba(92, 92, 92,0.04) 100%),linear-gradient(90deg, rgb(239,243,246),rgb(239,243,246)); background-size: 142px 142px;
 		background-size: 224px;
 		/* color-scheme: light dark; */
 		color: #030617

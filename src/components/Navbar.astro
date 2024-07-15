@@ -1,0 +1,36 @@
+---
+import NavItem from "./NavItem.astro";
+import NavbarButtons from "./NavbarButtons";
+
+import '../styles/global.css'
+
+const path = Astro.url.pathname
+const pathSlipt = path.split('/').slice(1).toString()
+
+const ClassFunction = (type: string ) => {
+let classes = 'text-secondary-black  hover:text-primary-green transition-all ease-in-out cursor-pointer px-4 py-2 '
+    if (pathSlipt === type) {
+        classes += 'inline-block bg-secondary-black  rounded-full text-white hover:text-white hover:bg-primary-green transition-all ease-in-out '
+       
+    } else {
+        classes += 'text-secondary-black '
+    }
+
+    return classes
+}
+
+---
+
+<nav class='flex justify-between py-6 px-10 items-center  '>
+   <a class="flex items-center gap-2" href="/"><h2 class="text-3xl font-semibold pr-20">LOGO</h2></a> 
+
+    <ul class="flex gap-8 items-center">
+      <NavItem newClass={ClassFunction('')} href="/">Home</NavItem>
+      <NavItem newClass={ClassFunction('search')} href="/search">Search</NavItem>
+      <NavItem newClass={ClassFunction('favorites')} href="/favorites">Favorites</NavItem>
+      <NavItem newClass={ClassFunction('notifications')} href="/notifications">Notifications</NavItem>
+    </ul>
+    <NavbarButtons client:visible/>
+    
+    </nav>
+
