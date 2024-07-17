@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import CategoryCatalog from "@/components/CategoryCatalog.astro";
+import CardItem from "@/components/CardItem.astro";
 ---
 
 <Layout title="Style Nest | Get started.">
@@ -26,5 +28,37 @@ import Card from "../components/Card.astro";
     <img src="./src/assets/OIP14.png" alt="NFT11" class="w-[500px]" />
   </header>
 
-  <section class="w-[90%] mx-auto"></section>
+  <section class="w-[90%] mx-auto">
+    <h2 class="text-2xl font-semibold text-secondary-black text-left mt-8 ml-8">
+      <a href="/search" class="hover:underline cursor-pointer"
+        >Visita nuestro catálogo ></a
+      >
+    </h2>
+
+    <div id="nft-shop" class="py-0 px-8 mt-8">
+      <div id="category" class="flex gap-4">
+        <CategoryCatalog href="#">Amazin Product</CategoryCatalog>
+        <CategoryCatalog href="#">Incredible items</CategoryCatalog>
+        <CategoryCatalog href="#">Unique stock</CategoryCatalog>
+        <CategoryCatalog href="#">Unusual objects</CategoryCatalog>
+      </div>
+      <div
+        id="nft-list"
+        class="px-0 py-10 flex justify-start gap-5 max-h-auto overflow-x-scroll"
+      >
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG9.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG11.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG13.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG15.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG2.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG4.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG6.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG8.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG10.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG12.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG14.jpeg" />
+        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG1.jpeg" />
+      </div>
+    </div>
+  </section>
 </Layout>
