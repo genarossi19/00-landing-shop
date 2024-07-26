@@ -1,32 +1,25 @@
 ---
 interface Props {
   title: string;
-  description: string;
 }
 
-const { title, description } = Astro.props;
-
-import Navbar from "@/components/Navbar.astro";
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <div id="app">
-      <header class="header-blur fixed top-0 w-full">
-        <Navbar />
-      </header>
+      <header class="header-blur fixed top-0 w-full"><slot /></header>
 
-      <main>
-        <slot />
-      </main>
       <footer class="bg-secondary-black text-white"></footer>
     </div>
   </body>

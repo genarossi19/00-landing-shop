@@ -1,5 +1,5 @@
 ---
-import Fav from "./icons/Fav.astro";
+import FavButton from "./FavButton.jsx";
 
 const { title, price, src } = Astro.props;
 ---
@@ -30,9 +30,7 @@ const { title, price, src } = Astro.props;
       class="text-[14px] pt-3.5 pb-1 px-0 flex items-center justify-between"
     >
       <p class="text-[#9C9C9C] py-1">30% off</p>
-      <a href="" class="hover:text-primary-green transition-all ease-in-out">
-        <Fav />
-      </a>
+      <FavButton client:only="react" />
     </div>
   </div>
 </a>

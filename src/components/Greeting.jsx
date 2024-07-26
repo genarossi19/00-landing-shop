@@ -10,17 +10,17 @@ const Greeting = () => {
     let greetingMessage = "";
 
     if (currentHour < 12 && currentHour >= 6) {
-      greetingMessage = "Buenos Días";
+      greetingMessage = "Good Morning";
     } else if (currentHour < 18 && currentHour >= 12) {
-      greetingMessage = "Buenas Tardes";
+      greetingMessage = "Good Afternoon";
     } else {
-      greetingMessage = "Buenas Noches";
+      greetingMessage = "Good Evening";
     }
 
     setGreeting(greetingMessage);
   }, []);
 
-  return <h1 className="ml-8 mb-1 text-3xl font-light">{greeting}</h1>;
+  return <h1 className="ml-8 mb-1 text-3xl ">{greeting}</h1>;
 };
 
 export default Greeting;
