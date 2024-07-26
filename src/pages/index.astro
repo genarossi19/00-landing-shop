@@ -26,8 +26,9 @@ import { Image } from "astro:assets";
         Lorem ipsum dolor sit amet consectetur adipisicing elit
       </p>
     </div>
-
+    <!-- le damos una rotacion en loop a la imagen -->
     <Image
+      class="bg-[#dfdcdc34] rounded-full"
       src="/OIP14.png"
       alt="myNFT"
       width={500}
@@ -45,10 +46,10 @@ import { Image } from "astro:assets";
 
     <div id="nft-shop" class="py-0 px-8 mt-8">
       <div id="category" class="flex gap-4">
-        <CategoryCatalog href="#">Amazin Product</CategoryCatalog>
-        <CategoryCatalog href="#">Incredible items</CategoryCatalog>
-        <CategoryCatalog href="#">Unique stock</CategoryCatalog>
-        <CategoryCatalog href="#">Unusual objects</CategoryCatalog>
+        <CategoryCatalog>Amazin Product</CategoryCatalog>
+        <CategoryCatalog>Incredible items</CategoryCatalog>
+        <CategoryCatalog>Unique stock</CategoryCatalog>
+        <CategoryCatalog>Unusual objects</CategoryCatalog>
       </div>
       <div
         id="nft-list"
