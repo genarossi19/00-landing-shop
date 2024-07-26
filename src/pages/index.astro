@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import CategoryCatalog from "@/components/CategoryCatalog.astro";
 import CardItem from "@/components/CardItem.astro";
 import Greeting from "@/components/Greeting";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Style Nest | Get started." description="Nuestro comercio">
@@ -26,7 +27,13 @@ import Greeting from "@/components/Greeting";
       </p>
     </div>
 
-    <img src="./src/assets/OIP14.png" alt="NFT11" class="w-[500px]" />
+    <Image
+      src="/OIP14.png"
+      alt="myNFT"
+      width={500}
+      height={500}
+      loading={"eager"}
+    />
   </header>
 
   <section class="w-[90%] mx-auto">
