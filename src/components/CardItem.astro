@@ -4,7 +4,7 @@ import FavButton from "./FavButton.jsx";
 const { title, price, src } = Astro.props;
 ---
 
-<div class="relative">
+<article class="relative">
   <a href="/favorites">
     <div
       id="item"
@@ -37,4 +37,4 @@ const { title, price, src } = Astro.props;
   <div class="absolute right-4 bottom-6">
     <FavButton client:visible />
   </div>
-</div>
+</article>
