@@ -1,4 +1,7 @@
 ---
+import CardItem from "@components/CardItem.astro";
+import CategoryCatalog from "@components/CategoryCatalog.astro";
+import { products } from "@lib/data";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -11,5 +14,31 @@ import Layout from "../layouts/Layout.astro";
     </h1>
   </header>
 
-  <section></section>
+  <section class="w-[90%] mx-auto">
+    <h2 class="text-2xl font-semibold text-secondary-black text-left mt-8 ml-8">
+      <a href="/search" class="hover:underline cursor-pointer"
+        >visit our catalog ></a
+      >
+    </h2>
+
+    <div id="nft-shop" class="py-0 px-8 mt-8">
+      <div id="category" class="flex gap-4">
+        <CategoryCatalog>Amazin Product</CategoryCatalog>
+        <CategoryCatalog>Incredible items</CategoryCatalog>
+        <CategoryCatalog>Unique stock</CategoryCatalog>
+        <CategoryCatalog>Unusual objects</CategoryCatalog>
+      </div>
+      <div
+        id="nft-list"
+        class="px-0 py-10 flex justify-start gap-5 max-h-auto overflow-x-scroll"
+      >
+        <!-- renderizamos los prodcutos solo si su propiedad favorite es true  -->
+        {
+          products
+            .filter((product) => product.favorite)
+            .map((product) => <CardItem products={product} />)
+        }
+      </div>
+    </div>
+  </section>
 </Layout>
