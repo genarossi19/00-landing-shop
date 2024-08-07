@@ -4,6 +4,7 @@ import CategoryCatalog from "@/components/CategoryCatalog.astro";
 import CardItem from "@/components/CardItem.astro";
 import Greeting from "@/components/Greeting";
 import { Image } from "astro:assets";
+import { products } from "@lib/data";
 ---
 
 <Layout title="Style Nest | Get started." description="Nuestro comercio">
@@ -55,18 +56,7 @@ import { Image } from "astro:assets";
         id="nft-list"
         class="px-0 py-10 flex justify-start gap-5 max-h-auto overflow-x-scroll"
       >
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG9.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG11.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG13.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG15.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG2.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG4.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG6.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG8.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG10.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG12.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG14.jpeg" />
-        <CardItem title="NFT11" price="10.00" src="./src/assets/OIG1.jpeg" />
+        {products.map((product) => <CardItem products={product} />)}
       </div>
     </div>
   </section>

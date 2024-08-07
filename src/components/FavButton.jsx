@@ -1,8 +1,8 @@
 import React from "react";
 import Fav from "./icons/Fav.jsx";
 
-function FavButton() {
-  const [fav, setFav] = React.useState(false);
+function FavButton({ isFav }) {
+  const [fav, setFav] = React.useState(isFav);
   const handleClick = () => {
     setFav(!fav);
   };
